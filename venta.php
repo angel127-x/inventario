@@ -34,9 +34,9 @@
             </div>
         </form>
     </section>
-    <section style='margin-top: 100px; width: 20%' class="seccion__formulario">
+    <section style='margin: 100px 0; width: 100%' class="seccion__formulario">
             <form class="formulario centrar" action="/PHP/factura.php" method="get">
-                <div class="formulario__posicion">
+                <div style='width: 20%;' class="formulario__posicion">
                     <label class="texto" for="idVenta">Número de venta</label>
                     <input class="entrada" type="number" id="idVenta" name="idVenta" required>
                 </div>

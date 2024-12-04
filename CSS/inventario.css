@@ -3,9 +3,6 @@
     padding: 0;
     box-sizing: border-box;
 }
-.body{
-    width: 100vw;
-}
 .header, 
 .encabezado{
     text-align: center;
@@ -17,9 +14,12 @@
 .seccion__formulario{
     width: 80%;
     margin: auto;
+    text-align: center;
 }
 .formulario{
     display: flex;
+    justify-content: center;
+    
 }
 .formulario__posicion{
     display: flex;
