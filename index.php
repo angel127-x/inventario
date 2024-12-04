@@ -7,7 +7,7 @@
     <title>Inventario</title>
     <link rel="stylesheet" href="/CSS/inventario.css">
 </head>
-<body>
+<body class="body">
     <header class="header">
         <h1 class="header__titulo">Inventario</h1>
     </header>
