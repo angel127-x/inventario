@@ -1,0 +1,33 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.cont__registro{
+    border: solid;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.registro{
+    border: solid #226f54;
+    border-radius: 20px;
+    text-align: center;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    background-color: rgb(159, 232, 192);
+}
+.regitro__txt{
+    font-size: 1.2rem;
+}
+.registro__link{
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: #226f54;
+    /* display: inline-block; */
+    padding: 20px;
+    background-color: antiquewhite;
+}
