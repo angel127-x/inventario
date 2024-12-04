@@ -83,6 +83,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $nombreProducto = $row['Nombre'];
         $precio_unitario = $row['Precio'];
         $cantidad_actual = $row['Cantidad'];
+        date_default_timezone_set("America/Mexico_City");
+        $fechaVenta = date("d-m-Y H:i:s");
 
         // Verificar si hay suficiente cantidad en stock
         if ($cantidad_actual >= $cantidad_vendida) {
@@ -94,8 +96,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $sql_update = "UPDATE inventario SET Cantidad = $nueva_cantidad WHERE Codigo = $codigo_producto";
 
             // Registrar la venta en la tabla ventas
-            $sql_insert_venta = "INSERT INTO ventas(idVenta, nombreCliente, nombreProducto, cantidadVendida, precioUnitario, ventaTotal)
-                                 VALUES('$idVenta', '$nombreCliente', '$nombreProducto', '$cantidad_vendida', '$precio_unitario', '$total_venta')";
+            $sql_insert_venta = "INSERT INTO ventas(idVenta, nombreCliente, nombreProducto, cantidadVendida, precioUnitario, ventaTotal, fechaVenta)
+                                 VALUES('$idVenta', '$nombreCliente', '$nombreProducto', '$cantidad_vendida', '$precio_unitario', '$total_venta', '$fechaVenta')";
 
             // Ejecutar ambas consultas
             if ($conn->query($sql_update) === TRUE && $conn->query($sql_insert_venta) === TRUE) {

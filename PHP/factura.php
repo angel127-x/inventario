@@ -14,7 +14,7 @@ if (filter_var($idVenta, FILTER_VALIDATE_INT) === false) {
     $idVenta = 1;
 }
 
-$sqlVenta = "SELECT idVenta, nombreCliente FROM ventas WHERE idVenta = $idVenta";
+$sqlVenta = "SELECT idVenta, nombreCliente, fechaVenta FROM ventas WHERE idVenta = $idVenta";
 $resultado = $conexion->query($sqlVenta);
 
 $numeroFilas = $resultado->num_rows;
@@ -99,7 +99,7 @@ $pdf->SetFont('Arial', '', 8);
 
 $pdf->Ln();
 
-// $pdf->Cell(35, 5, 'Fecha: ' . $row_venta['fecha_venta'], 0, 0, 'C');
+$pdf->Cell(35, 5, 'Fecha: ' . $row_venta['fechaVenta'], 0, 0, 'C');
 // $pdf->Cell(35, 5, 'Hora: ' . $row_venta['hora'], 0, 1, 'C');
 
 $pdf->Ln();

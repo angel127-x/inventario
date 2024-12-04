@@ -65,10 +65,12 @@ function insertar($conexion){
         $categoria = $_POST['categoria'];
         $precio = $_POST['precio'];
         $cantidad = $_POST['cantidad'];
+        date_default_timezone_set("America/Mexico_City");
+        $fechaInventario = date("d-m-Y H:i:s");
         
         // consulta para ingresar registros y se almacenan en una variable
-        $consulta = "INSERT INTO inventario(Codigo, Nombre, Categoria, Precio, Cantidad)
-        VALUES('$codigo', '$nombre', '$categoria', '$precio', '$cantidad')";
+        $consulta = "INSERT INTO inventario(Codigo, Nombre, Categoria, Precio, Cantidad, FechaInventario)
+        VALUES('$codigo', '$nombre', '$categoria', '$precio', '$cantidad', '$fechaInventario')";
         
 
         // hacemos la consulta a la base de datos y despues la cerramos
@@ -86,8 +88,10 @@ function actualizar($conexion){
         $categoria = $_POST['categoria'];
         $precio = $_POST['precio'];
         $cantidad = $_POST['cantidad'];
+        date_default_timezone_set("America/Mexico_City");
+        $fechaInventario = date("d-m-Y H:i:s");
 
-        $consulta = "UPDATE inventario SET Cantidad = $cantidad WHERE (Codigo = $codigo)";
+        $consulta = "UPDATE inventario SET Cantidad = $cantidad, FechaInventario = '$fechaInventario' WHERE (Codigo = $codigo)";
 
         
         // hacemos la consulta a la base de datos y despues la cerramos
