@@ -58,6 +58,14 @@ function selecc($conexion){
     }
 }
 
+function validarCodigo($conexion, $codigo) {
+    // Consulta para verificar si el código existe
+    $consulta = "SELECT COUNT(*) AS total FROM inventario WHERE Codigo = '$codigo'";
+    $resultado = mysqli_query($conexion, $consulta);
+    $fila = mysqli_fetch_assoc($resultado);
+    return $fila['total'] > 0; // Devuelve true si el código existe, false en caso contrario
+}
+
 function insertar($conexion){
         // almacenamos los registros del formulario
         $codigo = $_POST['codigo'];
@@ -67,6 +75,14 @@ function insertar($conexion){
         $cantidad = $_POST['cantidad'];
         date_default_timezone_set("America/Mexico_City");
         $fechaInventario = date("d-m-Y H:i:s");
+
+            // Validamos si el código ya existe
+    if (validarCodigo($conexion, $codigo)) {
+        echo "<script>
+        alert('El código ingresado ya existe. Intente con otro código.');
+        </script>";
+        return;
+    }
         
         // consulta para ingresar registros y se almacenan en una variable
         $consulta = "INSERT INTO inventario(Codigo, Nombre, Categoria, Precio, Cantidad, FechaInventario)
@@ -79,7 +95,7 @@ function insertar($conexion){
         // mostramos una alerta de que el registro ha sido agregado
         echo "<script>
         alert('Registro agregado correctamente');
-    </script>";
+        </script>";
 }
 function actualizar($conexion){
         // almacenamos los registros del formulario
