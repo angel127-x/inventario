@@ -64,7 +64,7 @@
     </section>
     <section class="seccion__btn">
         <div class="btn">
-            <a href="index.php">Invetario</a>
+            <a href="index.php">Agregar Producto</a>
             <!-- <a href="/PHP/mostrarTabla.php">Mostrar Registros</a> -->
         </div>
     </section>
