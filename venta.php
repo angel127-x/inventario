@@ -12,22 +12,34 @@
     </header>
     <!-- Formulario HTML para la venta -->
      <section class="seccion__formulario">
-         <form class="formulario centrar" method="POST" onsubmit='false;' action="venta.php">
+         <form class="formulario centrar" method="POST" onsubmit='false;' action="venta.php" autocomplete="off">
             <div class="formulario__posicion">
                 <label class="texto" for="nombre">Nombre del cliente</label>
                 <input class="entrada" type="text" id="nombre" name="nombre" required>
+                <span>Ingrese el nombre del cliente</span>
             </div>
             <div class="formulario__posicion">
                 <label class="texto" for="codigo">Código del producto</label>
                 <input class="entrada" type="text" id="codigo" name="codigo" required>
+                <span>
+                    <p>Ingrese el codigo del producto a vender</p>
+                    <p>Este codigo es el del producto</p>
+                    <p>que anteriormente agregaste</p>
+                </span>
             </div>
              <div class="formulario__posicion">
                  <label class="texto" for="cantidad">Cantidad a vender</label>
                  <input class="entrada" type="number" id="cantidad" name="cantidad" required>
+                <span>Ingrese las unidades a vender</span>
             </div>
             <div class="formulario__posicion">
-                <label class="texto" for="cantidad">ID de venta</label>
+                <label class="texto" for="">ID de venta</label>
                 <input class="entrada" type="number" id="idVenta" name="idVenta" required>
+                <span class="id_venta">
+                    <p>Ingrese el ID de venta</p>
+                    <p>Este ID sera el que introduzcas para generar la factura</p>
+                    <p>Puedes vender muchos productos con un mismo ID de venta</p>
+                </span>
             </div>
             <div class="cont__btn">
                 <button class="btn btn__capturar" name="enviar" type="submit">Vender</button>
@@ -37,8 +49,13 @@
     <section style='margin: 100px 0; width: 100%' class="seccion__formulario">
             <form class="formulario centrar" action="/PHP/factura.php" method="get">
                 <div style='width: 20%;' class="formulario__posicion">
-                    <label class="texto" for="idVenta">Número de venta</label>
+                    <label class="texto" for="">ID de venta</label>
                     <input class="entrada" type="number" id="idVenta" name="idVenta" required>
+                    <span class="id_venta">
+                        <p>Agrega el ID de venta de las</p>
+                        <p>ventas que has hecho para generar</p>
+                        <p>tu factura</p>
+                    </span>
                 </div>
                 <div class="cont__btn">
                     <button class="btn btn__capturar" type="submit">Generar factura</button>
@@ -48,7 +65,7 @@
     <section class="seccion__btn">
         <div class="btn">
             <a href="index.php">Invetario</a>
-            <a href="/PHP/mostrarTabla.php">Mostrar Registros</a>
+            <!-- <a href="/PHP/mostrarTabla.php">Mostrar Registros</a> -->
         </div>
     </section>
 </body>

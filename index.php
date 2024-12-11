@@ -9,39 +9,44 @@
 </head>
 <body class="body">
     <header class="header">
-        <h1 class="header__titulo">Inventario</h1>
+        <h1 class="header__titulo">Agregar Producto</h1>
     </header>
     <section class="seccion__formulario">
-        <form class="formulario centrar" method="post" onsubmit="false;" action="index.php">
+        <form class="formulario centrar" method="post" onsubmit="false;" action="index.php" autocomplete="off">
             <div class="formulario__posicion">
                 <label class="texto" for="codigo">Codigo</label>
                 <input class="entrada" type="text" name="codigo" id="codigo" required="true">
+                <span>Ingrese el cogido del producto</span>
             </div>
             <div class="formulario__posicion">
                 <label class="texto" for="nombre">Nombre</label>
                 <input class="entrada" type="text" name="nombre" id="nombre">
+                <span>Ingrese el nombre del producto</span>
             </div>
             <div class="formulario__posicion">
                 <label class="texto" for="categoria">Categoria</label>
                 <input class="entrada" type="text" name="categoria" id="categoria">
+                <span>Ingrese la categoria del producto</span>
             </div>
             <div class="formulario__posicion">
                 <label class="texto" for="precio">Precio</label>
                 <input class="entrada" type="text" name="precio" id="precio">
+                <span>Ingrese el precio del producto</span>
             </div>
             <div class="formulario__posicion">
                 <label class="texto" for="cantidad">Cantidad</label>
                 <input class="entrada" type="number" name="cantidad" id="cantidad" required="true">
+                <span>Ingrese la cantidad del producto</span>
             </div>
             <div class="cont__btn">
                 <button class="btn btn__capturar" name="enviar">Agregar Producto</button>
-                <button class="btn btn__capturar" name="actualizar">Actualizar Stock</button>
+                <!-- <button class="btn btn__capturar" name="actualizar">Actualizar Stock</button> -->
             </div>
         </form>
 </section>
 <section class="seccion__btn">
     <div class="btn">
-        <a href="/PHP/mostrarTabla.php">Mostrar Registros</a>
+        <!-- <a href="/PHP/mostrarTabla.php">Mostrar Registros</a> -->
         <a href="venta.php">Vender Producto</a>
     </div>
 </section>

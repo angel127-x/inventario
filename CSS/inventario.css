@@ -39,6 +39,7 @@
     padding: 10px 10px;
     font-size: 1.3rem;
     border: .5px solid #226f54;
+    /* transition: all; */
 }
 .seccion__btn{
     /* border: solid; */
@@ -80,4 +81,20 @@
     padding: 10px 10px;
     font-size: 1.3rem;
     border: .5px solid #226f54;
+}
+
+/* efecto hover */
+span{
+    position: absolute;
+    transform: translate(10px, 80px);
+    z-index: -1;
+    transition: all .5s ease-in-out ;
+    color: #fff;
+}
+.entrada:hover + span{
+    transform: translate(10px, 118px);
+    color: #000;
+}
+.entrada:hover + .id_venta{
+    color: #000;
 }
